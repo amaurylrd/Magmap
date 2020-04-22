@@ -1,0 +1,231 @@
+.tweet {
+    border: 1px solid #e6ecf0;
+    border-radius: 8px;
+    width: 450px;
+    margin: auto;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    cursor: default;
+    background-color: white;
+    padding: 15px 20px;
+    border-bottom: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.tweet-content {
+    margin-bottom: 15px;
+    margin-left: 58px;
+}
+				
+.tweet-header {
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 48px;
+}
+		
+.tweet-header .account-group {
+    cursor: default;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.account-group .avatar {
+    margin-top: 0;
+    float: left;
+    margin-top: 3px;
+    margin-left: -58px;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    -moz-force-broken-image-icon: 1;
+    border: 0;
+}
+
+.account-group .fullname-group {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 24px;
+    max-width: 32ch;
+}
+
+.fullname-group .fullname {
+    font-size: 18px;
+    font-weight: bold;
+    word-break: break-all;
+    color: #14171a;
+}
+
+.txt-truncate {
+    max-width: 100%;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+}
+
+.account-group .username {
+    font-size: 14px;
+    color: #657786;
+}
+
+.username b {
+    font-weight: normal;
+}
+
+
+*[dir="ltr"] {
+    direction: ltr !important;
+    text-align: left !important;
+    unicode-bidi: embed;
+}
+
+.tweet p {
+    word-wrap: break-word;
+}
+
+.tweet-text {
+    font-size: 27px;
+    line-height: 32px;
+    letter-spacing: .01em;
+    white-space: pre-wrap;
+}
+
+.tweet-details {
+    clear: both;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.tweet-details .metadata {
+    font-size: 14px;
+    line-height: 24px;
+    color: #657786;
+}
+
+.tweet-stats .stats {
+    margin-top: 10px;
+    border-bottom: 1px solid #e6ecf0;
+    border-top: 1px solid #e6ecf0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.stats li {
+    margin-right: 10px;
+    overflow: hidden;
+    display: block;
+    float: left;
+}
+
+.stats li:first-child a {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.stats li a {
+    font-size: 14px;
+    font-weight: normal;
+    padding-right: 0;
+}
+
+.stats a {
+    cursor: pointer;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: auto;
+    display: inline-block;
+    color: #657786;
+    float: left;
+    line-height: 16px;
+}
+
+.stats strong {
+    color: #14171a;
+    display: inline;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.tweet .tweet-footer {
+    font-size: 12px;
+    padding-top: 1px;
+}
+
+.tweet-footer .action-list {
+    font-size: 0;
+    height: 18px;
+    line-height: 1;
+    margin-bottom: 2px;
+    margin-top: 10px;
+}
+
+.action-list .action {
+    display: inline-block;
+    min-width: 80px;
+}
+
+.tweeter-footer .action .action-block {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    transition: box-shadow .15s ease-in-out;
+    color: #657786;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0 2px;
+    position: relative;
+    text-transform: none;
+}
+
+.icon-container {
+    display: inline-block;
+    line-height: 0;
+    position: relative;
+    vertical-align: middle;
+}
+
+.icon-medium {
+    background: transparent;
+    font-size: 18px;
+    line-height: 18px;
+    font-family: "edgeicons";
+    display: inline-block;
+    font-style: normal;
+    vertical-align: baseline;
+    position: relative;
+}
+
+span.action-count {
+    color: #657786;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    margin-left: 6px;
+    position: relative;
+    vertical-align: text-bottom;
+}
+
+.reply:hover {
+    color: #1da1f2;
+}
+
+.retweet:hover {
+    color: #17bf63;
+}
+
+.liked:hover {
+    color: #e0245e;
+}
+
+.mention {
+    color: color: rgb(27, 149, 224);
+}
