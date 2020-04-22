@@ -47,7 +47,9 @@
                         		<div class="tweet-header">
                             		<a class="account-group">
                                 		<img class="avatar" src="<?= base_url('assets/images/tweet/male_avatar.jpg'); ?>" alt="">
-                           				<span class="fullname-group"><strong class="fullname txt-truncate">Mat Wayne</strong></span>
+                           				<span class="fullname-group">
+                                            <strong class="fullname txt-truncate">Mat Wayne</strong>
+                                        </span>
                                 		<span class="username txt-truncate" dir="ltr">@<b>matthew.wayne</b></span>
                             		</a>
                         		</div>
@@ -55,169 +57,171 @@
                     		<div>
                     			<p class="tweet-text"><a class="mention" href="">@al_ice.d</a>, d&eacute;j&agrave; 6 mois que nos chemins se sont crois&eacute;s sur <a class="mention" href="">@Magmap</a> &#10084;&#65039;</p>
                     		</div>
-						<div class="tweet-details">
-                        	<div class="tweet-metadata">
-                        		<span class="metadata">
-                            		<span id="timeOutput">11:58 PM</span> - <span id="dayOutput">6</span> <span id="monthOutput">Nov</span> <span id="yearOutput">2019</span>
-                        		</span>
-                        	</div>
-                        	
-                        	<div class="tweet-stats">
-                            	<ul class="stats">
-                                	<li><a><strong style="display: inline-block;">75</strong> Retweets</a></li>
-                                	<li><a><strong style="display: inline-block;">524</strong> Likes</a></li>
-                            	</ul>
-                        	</div>
-                    	</div>
-                		<div class="tweet-footer">
-                        	<div class="action-list" role="group">
-                        		<div class="action">
-                                	<div class="action-block reply">
-                            			<div class="icon-container">
-                            				<span class="icon-medium"><i class="fa fa-comment"></i></span>
-                                   	 	</div>
-                                    	<span class="action-count"><span>276</span></span>
-                                	</div>
-                            	</div>
-                            	<div class="action">
-                                	<div class="action-block retweet">
-                            			<div class="icon-container">
-                                			<span class="icon-medium"><i class="fa fa-lg fa-retweet"></i></span>
-                                    	</div>
-                                    	<span class="action-count"><span>75</span></span>
-                                	</div>
-                            	</div>
-                				<div class="action">
-                                	<div class="action-block liked">
-                            			<div class="icon-container">
-                                			<span class="icon-medium"><i class="fa fa-heart"></i></span>
-                                    	</div>
-                                    	<span class="action-count">524</span>
-                                	</div>
-                            	</div>
-                            	<div class="action">
-                                	<div class="action-block">
-                            			<div class="icon-container">
-                                			<span class="icon-medium"><i class="fa fa-envelope"></i></span>
-                                    	</div>
-                                	</div>
-                            	</div>
-                        	</div>
-                    	</div>
-                	</div>
-                	<div class="tweet">
-                    	<div class="tweet-content">
-                        	<div class="tweet-header">
-                            	<a class="account-group">
-                                	<img class="avatar" src="<?= base_url('assets/images/tweet/female_avatar.jpg'); ?>" alt="">
-                           			<span class="fullname-group"><strong class="fullname txt-truncate">Sara Lisa</strong></span>
-                                	<span class="username txt-truncate" dir="ltr">@<b>m.sara_lisa</b></span>
-                            	</a>
-                        	</div>
-                    	</div>
-                    	<div>
-                    		<p class="tweet-text">Je pars plus en vacances tellement je fais de rencontres<br>avec <a class="mention" href="">@Magmap</a> !</p>
-                    	</div>
-						<div class="tweet-details">
-                        	<div class="tweet-metadata">
-                        		<span class="metadata">
-                            		<span id="timeOutput">10:06 PM</span> - <span id="dayOutput">1</span> <span id="monthOutput">Nov</span> <span id="yearOutput">2019</span>
-                        		</span>
-                        	</div>
-                        	<div class="tweet-stats">
-                            	<ul class="stats">
-                                	<li><a><strong style="display: inline-block;">218</strong> Retweets</a></li>
-                                	<li><a><strong style="display: inline-block;">609</strong> Likes</a></li>
-                            	</ul>
-                        	</div>
-                    	</div>
-                		<div class="tweet-footer">
-                        	<div class="action-list" role="group">
-                        		<div class="action">
-                                	<div class="action-block reply">
-                            			<div class="icon-container">
-                                			<span class="icon-medium"><i class="fa fa-comment"></i></span>
-                                    	</div>
-                                    	<span class="action-count"><span>121</span></span>
-                                	</div>
-                            	</div>
-                            	<div class="action">
-                                	<div class="action-block retweet">
-                            			<div class="icon-container">
-                                			<span class="icon-medium"><i class="fa fa-lg fa-retweet"></i></span>
-                                    	</div>
-                                    	<span class="action-count"><span>218</span></span>
-                                	</div>
-                            	</div>
-                				<div class="action">
-                                	<div class="action-block liked">
-                            			<div class="icon-container">
-                                			<span class="icon-medium"><i class="fa fa-heart"></i></span>
-                                    	</div>
-                                	    <span class="action-count">609</span>
-                                	</div>
-                            	</div>
-                            	<div class="action">
-                                	<div class="action-block">
-                            			<div class="icon-container">
-                                			<span class="icon-medium"><i class="fa fa-envelope"></i></span>
-                                    	</div>
-                                	</div>
-                            	</div>
-                        	</div>
-                    	</div>
-                	</div>
-				</div>
-					<p class="tweet-info">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-				</div>
-                <div class="row">
-                    <div class="col-md-3 register-left">
-                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="">
-                        <h3>Bienvenue</h3>
-                        <span>Vous faites d&eacute;j&agrave; partie de nos membres ? Connectez-vous pour d&eacute;couvrir notre s&eacute;lection de profils par affinit&eacute;s.</span>
-                        <a class="nav-link" href="">Se connecter</a>
+                            <div class="tweet-details">
+                                <div class="tweet-metadata">
+                                    <span class="metadata">
+                                        <span id="timeOutput">11:58 PM</span> - <span id="dayOutput">6</span> <span id="monthOutput">Nov</span> <span id="yearOutput">2019</span>
+                                    </span>
+                        	    </div>
+                        	    <div class="tweet-stats">
+                            	    <ul class="stats">
+                                	    <li><a><strong style="display: inline-block;">75</strong> Retweets</a></li>
+                                	    <li><a><strong style="display: inline-block;">524</strong> Likes</a></li>
+                            	    </ul>
+                                </div>
+                    	    </div>
+                            <div class="tweet-footer">
+                                <div class="action-list" role="group">
+                                    <div class="action">
+                                        <div class="action-block reply">
+                                            <div class="icon-container">
+                                                <span class="icon-medium"><i class="fa fa-comment"></i></span>
+                                            </div>
+                                            <span class="action-count"><span>276</span></span>
+                                	    </div>
+                            	    </div>
+                            	    <div class="action">
+                                	    <div class="action-block retweet">
+                                            <div class="icon-container">
+                                                <span class="icon-medium"><i class="fa fa-lg fa-retweet"></i></span>
+                                    	    </div>
+                                    	    <span class="action-count"><span>75</span></span>
+                                	    </div>
+                            	    </div>
+                				    <div class="action">
+                                	    <div class="action-block liked">
+                                            <div class="icon-container">
+                                                <span class="icon-medium"><i class="fa fa-heart"></i></span>
+                                            </div>
+                                            <span class="action-count">524</span>
+                                        </div>
+                                    </div>
+                                    <div class="action">
+                                        <div class="action-block">
+                                            <div class="icon-container">
+                                            <span class="icon-medium"><i class="fa fa-envelope"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <?php 
-                    	function input_tag($type, $name, $placeholder = "") {
-                    		return '<input type="'.$type.'" name="'.$name.'" class="form-control" value="'.set_value($name).'" placeholder="'.$placeholder.'">';
-                    	}
-                    ?>
-                    <div class="col-md-9 register-right">
-                        <div class="tab-content">
-                            <div class="tab-pane show active">
-                                <h3 class="register-heading">Inscrivez-vous et vivez vos propres relations</h3>
-                                <?= form_open('', array('class' => 'row')) ?>
-                                    <div class="col-md-6 form-group">
-                                        <div class="form-group">
-                                        	<?= input_tag('email', 'email', 'Adresse e-mail') ?>
-										</div>
-										<div class="input-group mb-2">
-        									<div class="input-group-prepend">
-        										<div class="input-group-text" onclick="toggle('password')"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
-        									</div>
-											<?= input_tag('password', 'password', 'Mot de passe') ?>
-										</div>
-                                        <div class="form-group">
-                                        	<select name="dept" class="form-control" id="depts">
-											</select>
+                    <div class="tweet">
+                        <div class="tweet-content">
+                            <div class="tweet-header">
+                                <a class="account-group">
+                                    <img class="avatar" src="<?= base_url('assets/images/tweet/female_avatar.jpg'); ?>" alt="">
+                                    <span class="fullname-group"><strong class="fullname txt-truncate">Sara Lisa</strong></span>
+                                    <span class="username txt-truncate" dir="ltr">@<b>m.sara_lisa</b></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="tweet-text">Je pars plus en vacances tellement je fais de rencontres<br>avec <a class="mention" href="">@Magmap</a> !</p>
+                        </div>
+                        <div class="tweet-details">
+                            <div class="tweet-metadata">
+                                <span class="metadata">
+                                    <span id="timeOutput">10:06 PM</span> - <span id="dayOutput">1</span> <span id="monthOutput">Nov</span> <span id="yearOutput">2019</span>
+                                </span>
+                            </div>
+                            <div class="tweet-stats">
+                                <ul class="stats">
+                                    <li><a><strong style="display: inline-block;">218</strong> Retweets</a></li>
+                                    <li><a><strong style="display: inline-block;">609</strong> Likes</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tweet-footer">
+                            <div class="action-list" role="group">
+                                <div class="action">
+                                    <div class="action-block reply">
+                                        <div class="icon-container">
+                                            <span class="icon-medium"><i class="fa fa-comment"></i></span>
+                                        </div>
+                                        <span class="action-count"><span>121</span></span>
+                                    </div>
+                                </div>
+                                <div class="action">
+                                    <div class="action-block retweet">
+                                        <div class="icon-container">
+                                            <span class="icon-medium"><i class="fa fa-lg fa-retweet"></i></span>
+                                        </div>
+                                        <span class="action-count"><span>218</span></span>
+                                    </div>
+                                </div>
+                                <div class="action">
+                                    <div class="action-block liked">
+                                       <div class="icon-container">
+                                           <span class="icon-medium"><i class="fa fa-heart"></i></span>
+                                       </div>
+                                       <span class="action-count">609</span>
+                                   </div>
+                                </div>
+                                <div class="action">
+                                    <div class="action-block">
+                                        <div class="icon-container">
+                                            <span class="icon-medium"><i class="fa fa-envelope"></i></span>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-       										<?= input_tag('text', 'username', 'Nom d\'utilisateur') ?>
-                                        </div>
-                                        <div class="input-group mb-2">
-        									<div class="input-group-prepend">
-        										<div class="input-group-text" onclick="toggle('passconf')"><i class="fa fa-eye-slash" aria-hidden="true"></i></div>
-        									</div>
-											<?= input_tag('password', 'passconf', 'Confirmation du mot de passe') ?>
-                                        </div>
-                                        <div class="form-group">
-                                        	<?= input_tag('date', 'birthdate') ?>
-                                        </div>
-                                        <input type="submit" class="btnRegister" value="S'enregistrer"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="tweet-info">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="">
+                    <h3>Bienvenue</h3>
+                    <span>Vous faites d&eacute;j&agrave; partie de nos membres ? Connectez-vous pour d&eacute;couvrir notre s&eacute;lection de profils par affinit&eacute;s.</span>
+                    <a class="nav-link" href="">Se connecter</a>
+                </div>
+    <?php
+    function input_tag($type, $name, $placeholder = "") {
+      return '<input type="'.$type.'" name="'.$name.'" class="form-control" value="'.set_value($name).'" placeholder="'.$placeholder.'">';
+  }
+  ?>
+                <div class="col-md-9 register-right">
+                    <div class="tab-content">
+                        <div class="tab-pane show active">
+                            <h3 class="register-heading">Inscrivez-vous et vivez vos propres relations</h3>
+                            <?= form_open('', array('class' => 'row')) ?>
+                                <div class="col-md-6 form-group">
+                                    <div class="form-group">
+                                        <?= input_tag('email', 'email', 'Adresse e-mail') ?>
                                     </div>
-                                <?= form_close() ?>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text" onclick="toggle('password')">
+                                                <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <?= input_tag('password', 'password', 'Mot de passe') ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <select name="dept" class="form-control" id="depts"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <?= input_tag('text', 'username', 'Nom d\'utilisateur') ?>
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text" onclick="toggle('passconf')">
+                                                <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                        <?= input_tag('password', 'passconf', 'Confirmation du mot de passe') ?>
+                                    </div>
+                                    <div class="form-group">
+                                        <?= input_tag('date', 'birthdate') ?>
+                                    </div>
+                                    <input type="submit" class="btnRegister" value="S'enregistrer"/>
+                                </div>
+                            <?= form_close() ?>
 
 
                                 <!-- 
@@ -237,16 +241,16 @@
 									base de donnée, serveur
                                 -->
                                 
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
             
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
             
-            <div id="map"></div>
-            <style type="text/css">
+        <div id="map"></div>
+        <style type="text/css">
                 #map {
                     width: 50%;
                     height: 100%;
@@ -254,34 +258,57 @@
                     background: white;
 /*                    radial-gradient(circle at center, #039, transparent);
 */                }
-            </style>
+    </style>
                         <!-- carte ici -->	
-            <footer>
+        <footer>
                  <?php
+                 $data = array('2' => 150, '3' => 112);
+
                     $cookie_name = 'depts_cookie';
                     if (!isset($_COOKIE[$cookie_name])) {
-                        $cookie_data = '';
-                        $cookie_expires = time()+60*60*24*30;
+                        $cookie_data = json_encode($data);
+                        $cookie_expires = time()+60*60*48;
                         setcookie($cookie_name, $cookie_data, $cookie_expires);
                     }
+
+
+                    // $from    = 'no-reply@magmap.com';
+                    // $to      = 'amaurylrd@yahoo.fr';
+                    // $subject = 'le sujet';
+                    // $message = 'Bonjour !';
+                    // $headers = 'From: '.$from.'\r\n'.
+                    //     'Reply-To: '.$to.'\r\n'.
+                    //     'X-Mailer: PHP/'.phpversion();
+
+                    // $success = mail($to, $subject, $message, $headers);
+                    // if (!$success) {
+                    //     $errorMessage = error_get_last()['message'];
+                    // }
+
                 ?>     	
-            </footer>
-		</div>
-  	</body>
+        </footer>
+	</div>
+</body>
 
   	<script type="text/javascript">
 		window.onload = () => {
 			makeServiceAjax().getDept().then((rep) => {
 				let select = document.getElementById("depts");
-				for (dept of rep) {
+                rep = rep.filter(dept => (dept.code+'').length < 3);
+                rep.sort(function(a, b) { return a.code - b.code; });
+                for (dept of rep) {
 					let opt = document.createElement("option");
 					opt.value = dept.code;
 					opt.innerText = dept.code+" - "+dept.nom;
 					select.appendChild(opt);
 				}
+                let map_data = getCookie('depts_cookie');
+                //let map_data = JSON.parse(json);
+                console.log(map_data);
+                console.log(map_data);
+                /*on trie les map_data en json et rep */
+                map_initialize(map_data);
 			}, (err) => {});
-            let map_data = getCookie('depts_cookie');
-            map_initialize(map_data);
         }
 
 		function toggle(name) {
