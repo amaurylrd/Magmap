@@ -10,7 +10,10 @@
         <?= link_tag('assets/css/font-awesome-4.7.0/css/font-awesome.min.css'); ?>
         <?= link_tag('assets/css/tweet.css'); ?>
         <?= link_tag('assets/css/style.css'); ?>
+        <script type='text/javascript' src="<?= base_url('assets/js/cache.js') ?>"></script>
         <script type='text/javascript' src="<?= base_url('assets/js/serviceAjax.js') ?>"></script>
+        <script type='text/javascript' src="<?= base_url('assets/js/d3.min.js') ?>"></script>
+        <script type='text/javascript' src="<?= base_url('assets/js/map.js') ?>"></script>
   	</head>
 
   	<body>
@@ -240,13 +243,32 @@
                 </div>
             </div>
             
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 	
-            			<!-- carte ici -->	
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            
+            <div id="map"></div>
+            <style type="text/css">
+                #map {
+                    width: 50%;
+                    height: 100%;
+                    margin-left: 5%;
+                    background: white;
+/*                    radial-gradient(circle at center, #039, transparent);
+*/                }
+            </style>
+                        <!-- carte ici -->	
             <footer>
-            	
+                 <?php
+                    $cookie_name = 'depts_cookie';
+                    if (!isset($_COOKIE[$cookie_name])) {
+                        $cookie_data = '';
+                        $cookie_expires = time()+60*60*24*30;
+                        setcookie($cookie_name, $cookie_data, $cookie_expires);
+                    }
+                ?>     	
             </footer>
 		</div>
   	</body>
+
   	<script type="text/javascript">
 		window.onload = () => {
 			makeServiceAjax().getDept().then((rep) => {
@@ -258,7 +280,9 @@
 					select.appendChild(opt);
 				}
 			}, (err) => {});
-		}
+            let map_data = getCookie('depts_cookie');
+            map_initialize(map_data);
+        }
 
 		function toggle(name) {
 			let input = document.getElementsByName(name)[0];
