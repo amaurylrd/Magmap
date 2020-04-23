@@ -1,4 +1,4 @@
-function map_initialize(data) {
+function map_initialize(map_data) {
     const width = 600, height = 600;
 
     const svg = d3.select('#map').append("svg")
@@ -22,41 +22,24 @@ function map_initialize(data) {
             .append("path")
             .attr("stroke", "white")
             .attr('id', function(d) { return "d"+d.properties.CODE_DEPT; })
-            .attr("d", path);
+            .attr("d", path);           
+
+        const chunk = (arr, n) => arr.length ? [arr.slice(0, n), ...chunk(arr.slice(n), n)] : [];
+        map_data.sort(function(a, b) { return d3.descending(a.weight, b.weight) });
+
+        var nclasses = Math.floor(Math.log2(map_data.length + 1));
+        var classes = chunk(map_data, Math.ceil(map_data.length/nclasses));
             
+        const color_scale = d3.scaleLinear().domain([1, nclasses])
+            .interpolate(d3.interpolateHcl)
+            .range([d3.rgb("#FCC5C0"), d3.rgb('#49006A')]);
 
-            var values = [];
-            for (let i = 1; i < 95; i++) {
-                if (i != 20) {
-                    let rand = Math.floor(Math.random() * Math.floor(500));
-                    values.push({code: i, weight: rand});
-                }
-            }            
-
-            const sum = array => array.reduce((accumulator, currentValue) => accumulator + currentValue.weight, 0);
-            const chunk = (arr, n) => arr.length ? [arr.slice(0, n), ...chunk(arr.slice(n), n)] : [];
-            values.sort(function(a, b) { return d3.descending(a.weight, b.weight) });
-
-            var nclasses = Math.floor(Math.log2(values.length + 1));
-            var classes = chunk(values, Math.ceil(values.length / nclasses));
-            
-            const color_scale = d3.scaleLinear().domain([1, nclasses])
-                .interpolate(d3.interpolateHcl)
-                .range([d3.rgb("#FCC5C0"), d3.rgb('#49006A')]);
-
-            console.log('classes');
-            console.log(classes);
-            for (let i = nclasses - 1; i >= 0 ; i--) {
-                let color = color_scale(i);
-                for (let j = 0; j < classes[i].length; j++) {
-                    let id = ("0"+classes[i][j].code).slice(-2);
-                    d3.select("#d"+id)._groups[0][0].style.fill = color;
-                }
-          }
-    //violet 4 #49006a
-    //rose 3 #dd3497
-    //rose 2 #f768a1
-    //rose 1 #fa9fb5
-    //rose 0 #fcc5c0
+        for (let i = nclasses - 1; i >= 0 ; i--) {
+            let color = color_scale(i);
+            for (let j = 0; j < classes[i].length; j++) {
+                let id = ("0"+classes[i][j].code).slice(-2);
+                d3.select("#d"+id)._groups[0][0].style.fill = color;
+            }
+        }
     });
 }

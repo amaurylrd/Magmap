@@ -262,7 +262,15 @@
                         <!-- carte ici -->	
         <footer>
                  <?php
-                 $data = array('2' => 150, '3' => 112);
+                    $data = array();
+                    for ($i = 1; $i < 96; $i++) {
+                        if ($i != 20) {
+                            $rand = rand(1, 500);
+                            $id = substr("0".$i, -2);
+                            $data[$id] = $rand;
+                        }
+                    } 
+                    
 
                     $cookie_name = 'depts_cookie';
                     if (!isset($_COOKIE[$cookie_name])) {
@@ -296,18 +304,19 @@
 				let select = document.getElementById("depts");
                 rep = rep.filter(dept => (dept.code+'').length < 3);
                 rep.sort(function(a, b) { return a.code - b.code; });
+                let cookie_json = JSON.parse(decodeURIComponent(getCookie('depts_cookie')));
                 for (dept of rep) {
 					let opt = document.createElement("option");
-					opt.value = dept.code;
-					opt.innerText = dept.code+" - "+dept.nom;
+                    let [code, nom] = [dept.code, dept.nom];
+					opt.value = code;
+					opt.innerText = code+" - "+nom;
 					select.appendChild(opt);
-				}
-                let map_data = getCookie('depts_cookie');
-                //let map_data = JSON.parse(json);
-                console.log(map_data);
-                console.log(map_data);
-                /*on trie les map_data en json et rep */
-                map_initialize(map_data);
+
+                    delete dept.codeRegion;
+                    delete dept.nom;
+                    dept.weight = cookie_json.hasOwnProperty(code) ? cookie_json[code] : 0; 
+                }
+                map_initialize(rep);
 			}, (err) => {});
         }
 
