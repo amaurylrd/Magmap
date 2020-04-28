@@ -144,7 +144,16 @@ input, textarea {
     align-items: center;
 }
 
-.tweet-info {   
+.tweet-info {
+    color: #f5f5f5;
+    padding-top: 85px;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 32px;
+    letter-spacing: .01em;
+    text-align: center;
     color: white;
     position: relative; 
 }
@@ -268,6 +277,15 @@ input, textarea {
     cursor: pointer;
 }
 
+#map {
+    width: 50%;
+    height: 100%;
+    margin-left: 5%;
+    background: white;
+}
+
+/* tout est bon au dessus */
+
 .btnRegister:hover {
     
 /*    background: red;
@@ -280,3 +298,101 @@ input, textarea {
     padding-bottom: 5px;
     color: #495057;
 }
+
+.red {
+  color: red !important;
+}
+
+footer {
+    background-color: #282828;
+    background-color: #282828;
+    background-color: #f5f5f5;
+   padding: 80px 0;
+}
+
+.footer-social a:hover i {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.footer-social i {
+    color: #fff;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
+}
+
+footer .footer-widget h3 {
+  margin-bottom: 30px;
+}
+footer .contact-link {
+  display: inline-block;
+  width: 100%;
+  color: #333;
+}
+footer .footer-social ul {
+  padding-left: 0;
+}
+footer .footer-social ul li {
+  list-style: none;
+  float: left;
+  padding: 0 10px;
+}
+footer .footer-social ul li:first-child {
+  padding-left: 0;
+}
+footer .footer-social ul li a {
+  font-size: 20px;
+  color: #333;
+}
+footer .footer-social ul li a:hover {
+  color: red;
+}
+footer .opening-time {
+  padding-left: 0;
+}
+footer .opening-time li {
+  list-style: none;
+}
+footer .opening-time li span {
+  float: left;
+  padding-right: 10px;
+}
+footer .opening-time li span .fa-times {
+  color: red;
+}
+footer .opening-time li strong {
+  color: red;
+}
+footer .media-body a {
+  color: #333;
+}
+footer .media-body a:hover {
+  color: red;
+}
+footer .media-body span {
+  color: #969696;
+}
+footer .images-gellary ul {
+  padding-left: 0;
+}
+footer .images-gellary ul li {
+  list-style: none;
+  float: left;
+  margin: 0 3% 2% 0;
+  width: 31%;
+  position: relative;
+}
+footer .images-gellary ul li:nth-child(3n) {
+  margin: 0 0 1%;
+}
+

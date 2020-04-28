@@ -3,6 +3,8 @@
 	<head>
     	<meta http-equiv="Content-Type" charset="UTF-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="language" content="FR">
+        <meta name="description" content="Site de rencontre en ligne">
         <title>Magmap</title>
         <?= link_tag('assets/css/normalize.css'); ?>
         <?= link_tag('assets/css/reset.css'); ?>
@@ -10,21 +12,27 @@
         <?= link_tag('assets/css/font-awesome-4.7.0/css/font-awesome.min.css'); ?>
         <?= link_tag('assets/css/tweet.css'); ?>
         <?= link_tag('assets/css/style.css'); ?>
+        <script type='text/javascript' src="<?= base_url('assets/js/d3.min.js') ?>"></script>
         <script type='text/javascript' src="<?= base_url('assets/js/cache.js') ?>"></script>
         <script type='text/javascript' src="<?= base_url('assets/js/serviceAjax.js') ?>"></script>
-        <script type='text/javascript' src="<?= base_url('assets/js/d3.min.js') ?>"></script>
         <script type='text/javascript' src="<?= base_url('assets/js/map.js') ?>"></script>
   	</head>
 
-  	<body>
+    <?php
+        function input_tag($type, $name, $placeholder = "") {
+            return '<input type="'.$type.'" name="'.$name.'" class="form-control" value="'.set_value($name).'" placeholder="'.$placeholder.'">';
+        }
+    ?>
+
+  	<body>   
 		<div id="app">
 			<header>
 				<nav class="nav nav-bar">
 					<a style="margin-right: auto" href="">
 						<img class="nav-logo" src="<?= base_url('assets/images/raspberry.svg'); ?>">
 					</a>
-					<a class="nav-link" href="">S’inscrire</a>
-					<a class="nav-link" href="">Se connecter</a>
+                    <?= anchor('#registration', 'S’inscrire', 'class="nav-link"'); ?>
+                    <?= anchor('', 'Se connecter', 'class="nav-link"'); ?>
 				</nav>
 			</header>
 
@@ -38,7 +46,8 @@
 			</main>
 
 			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-			
+			        <div id="map"></div>
+
 			<div class="register">
 				<div class="container" style="height: 650px">
 					<div class="tweet-container">
@@ -169,7 +178,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="tweet-info">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                <p class="tweet-info">Comme Matthew et Sara, faites-nous confiance pour nous permettre de vous aider à rencontre la personne dont vous rêviez à vos côtés.</p>
             </div>
             <div class="row">
                 <div class="col-md-3 register-left">
@@ -178,12 +187,7 @@
                     <span>Vous faites d&eacute;j&agrave; partie de nos membres ? Connectez-vous pour d&eacute;couvrir notre s&eacute;lection de profils par affinit&eacute;s.</span>
                     <a class="nav-link" href="">Se connecter</a>
                 </div>
-    <?php
-    function input_tag($type, $name, $placeholder = "") {
-      return '<input type="'.$type.'" name="'.$name.'" class="form-control" value="'.set_value($name).'" placeholder="'.$placeholder.'">';
-  }
-  ?>
-                <div class="col-md-9 register-right">
+                <div id="registration" class="col-md-9 register-right">
                     <div class="tab-content">
                         <div class="tab-pane show active">
                             <h3 class="register-heading">Inscrivez-vous et vivez vos propres relations</h3>
@@ -237,7 +241,7 @@
 									https://codepen.io/jsweetie/pen/dXLyYG
 									https://kitt.lewagon.com/placeholder/users/random?2
 									change color of map en fonction de des depts des utilisateurs
-
+                                    mode icognito
 									base de donnée, serveur
                                 -->
                                 
@@ -246,21 +250,11 @@
                 </div>
             </div>
         </div>
-            
-        <br><br><br><br><br><br><br><br><br><br>
-            
-        <div id="map"></div>
-        <style type="text/css">
-                #map {
-                    width: 50%;
-                    height: 100%;
-                    margin-left: 5%;
-                    background: white;
-/*                    radial-gradient(circle at center, #039, transparent);
-*/                }
-    </style>
+                        
+        
+       <br><br><br><br><br><br><br><br><br><br>
                         <!-- carte ici -->	
-        <footer>
+        
                  <?php
                     $data = array();
                     for ($i = 1; $i < 96; $i++) {
@@ -294,26 +288,107 @@
                     // }
 
                 ?>     	
-        </footer>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="footer-widget">
+                            <h3>Stay in touch</h3>
+                            <div class="footer-widget-content">
+            
+            <a href="mailto:sales@example.com" class="contact-link">sales@example.com</a>
+            <a href="mailto:support@example.com" class="contact-link red"> support@example.com </a>
+            <a href="tel:0121234" class="contact-link">(123) 456-789</a>
+            <div class="footer-social">
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="#"><i class="fa fa-rss"></i></a></li>
+            </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+      <div class="footer-widget">
+        <h3>Latest Events</h3>
+        <div class="footer-widget-content">
+          <div class="media">
+              <div class="media-left">
+                 <a href="#"><img class="media-object" src="http://placehold.it/60x60" alt="..."></a>
+              </div>
+              <div class="media-body">
+                 <p><a href="#">vulputate velit esse consequat. </a></p>
+                 <span>September 30, 2016 </span>
+              </div>
+           </div>
+          <div class="media">
+              <div class="media-left">
+                 <a href="#."><img class="media-object" src="http://placehold.it/60x60" alt="..."></a>
+              </div>
+              <div class="media-body">
+                 <p><a href="#">vulputate velit esse consequat. </a></p>
+                 <span>September 30, 2016 </span>
+              </div>
+           </div>
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+      <div class="footer-widget">
+        <h3>Opening Hour</h3>
+        <div class="footer-widget-content">
+        <div class="open-time ">
+          <ul class="opening-time">
+            <li><span><i class="fa fa-times"></i></span><p class="clock-time"><strong>monday :</strong> closed</p>
+             </li>
+            <li><span><i class="fa fa-check"></i></span><p><strong>tue-fri :</strong> 8am - 12am</p></li>
+            <li><span><i class="fa fa-check"></i></span><p><strong>sat-sun :</strong> 7am - 1am</p></li>
+            <li><span><i class="fa fa-check"></i></span><p><strong>holydays :</strong> 12pm-12am</p></li>
+          </ul>
+           </div>
+        </div>
+        </div></div>
+      
+      <div class="col-sm-3">
+      <div class="footer-widget">
+        <h3>Latest Events</h3>
+        <div class="footer-widget-content">
+          <div class="images-gellary">
+            <ul>
+              <li><a href="#"><img src="http://placehold.it/85x85" alt="Instagram 01"></a></li>
+              <li><a href="#"><img src="http://placehold.it/85x85" alt="Instagram 02"></a></li>
+              <li><a href="#"><img src="http://placehold.it/85x85" alt="Instagram 03"></a></li>
+              <li><a href="#"><img src="http://placehold.it/85x85" alt="Instagram 04"></a></li>
+              <li><a href="#"><img src="http://placehold.it/85x85" alt="Instagram 05"></a></li>
+              <li><a href="#"><img src="http://placehold.it/85x85" alt="Instagram 06"></a></li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 	</div>
 </body>
 
   	<script type="text/javascript">
 		window.onload = () => {
 			makeServiceAjax().getDept().then((rep) => {
-				let select = document.getElementById("depts");
                 rep = rep.filter(dept => (dept.code+'').length < 3);
                 rep.sort(function(a, b) { return a.code - b.code; });
                 let cookie_json = JSON.parse(decodeURIComponent(getCookie('depts_cookie')));
+                let select = document.getElementById("depts");
                 for (dept of rep) {
 					let opt = document.createElement("option");
                     let [code, nom] = [dept.code, dept.nom];
 					opt.value = code;
 					opt.innerText = code+" - "+nom;
 					select.appendChild(opt);
-
-                    delete dept.codeRegion;
-                    delete dept.nom;
+                    delete dept.codeRegion; delete dept.nom;
                     dept.weight = cookie_json.hasOwnProperty(code) ? cookie_json[code] : 0; 
                 }
                 map_initialize(rep);

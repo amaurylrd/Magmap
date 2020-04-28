@@ -14,16 +14,16 @@ function map_initialize(map_data) {
         .translate([width / 2, height / 2]);
 
     const path = d3.geoPath().projection(projection);
-
-    d3.json("assets/json/departments.json").then(function(geojson) {
+    
+    d3.json("/assets/json/departments.json").then(function(geojson) {
         deps.selectAll("path")
             .data(geojson.features)
             .enter()
             .append("path")
             .attr("stroke", "white")
             .attr('id', function(d) { return "d"+d.properties.CODE_DEPT; })
-            .attr("d", path);           
-
+            .attr("d", path);
+            
         const chunk = (arr, n) => arr.length ? [arr.slice(0, n), ...chunk(arr.slice(n), n)] : [];
         map_data.sort(function(a, b) { return d3.descending(a.weight, b.weight) });
 
