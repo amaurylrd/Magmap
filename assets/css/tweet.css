@@ -88,6 +88,7 @@
 
 .tweet p {
     word-wrap: break-word;
+    text-align: none;
 }
 
 .tweet-text {

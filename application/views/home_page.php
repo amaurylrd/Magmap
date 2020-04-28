@@ -26,27 +26,59 @@
 
   	<body>   
 		<div id="app">
-			<header>
-				<nav class="nav nav-bar">
-					<a style="margin-right: auto" href="">
-						<img class="nav-logo" src="<?= base_url('assets/images/raspberry.svg'); ?>">
-					</a>
-                    <?= anchor('#registration', 'S’inscrire', 'class="nav-link"'); ?>
-                    <?= anchor('', 'Se connecter', 'class="nav-link"'); ?>
-				</nav>
-			</header>
+            <div class="page">
+                <header>
+				    <nav class="nav nav-bar">
+					   <a style="margin-right: auto" href="">
+						  <img class="nav-logo" src="<?= base_url('assets/images/raspberry.svg'); ?>">
+					   </a>
+                        <?= anchor('#registration', 'S’inscrire', 'class="nav-link"'); ?>
+                        <?= anchor('', 'Se connecter', 'class="nav-link"'); ?>
+				    </nav>
+                </header>
 
-			<main role="main">
-				<div class="container justify-content-center">
-					<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</h2>
-					<img style="float: left" src="<?= base_url('assets/images/run.gif'); ?>"  alt="">
-					<p><br><br>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                <main role="main">
+				    <div class="container justify-content-center">
+                    <!-- 
+                    partenaire confiance
+                    français
+                    sérieux
+                    service vraiment personnalisé
+                     -->
+					   <h2 class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+					<!-- <img style="float: left" src="<?= base_url('assets/images/run.gif'); ?>"  alt=""> -->
+					   <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+
+                       <!-- <hr style="float:left" class="separator">
+                       <span>aeazza</span>
+                        <div class="row align-items-center">
+                            <div class="col">col</div>
+                            <div class="col">col</div>
+                            <div class="col">col</div>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <div id="map"></div>            </div>
+ -->
 				</div>
-				<hr class="separator">
+				
 			</main>
-
-			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-			        <div id="map"></div>
+        </div>
+            <div id="fst" class="page">
+</div>
+<style type="text/css">
+    .page {
+        height: 100vh;
+    }
+    #fst {
+        background-color: #351613;
+        background-color: #553734;
+        /*background: radial-gradient(circle at top, rgba(194, 63, 84, 0), rgba(224, 125, 195, 1));
+    /*#c9a5cc
+        background-color: black;*/
+        background-color: #f5f5f5;
+        margin: 0 5% 5% 5%;
+    }
+</style>
+			
 
 			<div class="register">
 				<div class="container" style="height: 650px">
