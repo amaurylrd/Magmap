@@ -39,43 +39,70 @@
 
                 <main role="main">
 				    <div class="container justify-content-center">
-                    <!-- 
-                    partenaire confiance
-                    français
-                    sérieux
-                    service vraiment personnalisé
-                     -->
-					   <h2 class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
-					<!-- <img style="float: left" src="<?= base_url('assets/images/run.gif'); ?>"  alt=""> -->
+					   <h2 class="main_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
 					   <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+				    </div>
+                </main>
+            </div>
+            <div class="page">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <img src="" alt="rtr">
+                        <span>truc</span>
+                    </div>
+                    <div class="col">col</div>
+                    <div class="col">col</div>
+                </div>
+                <style type="text/css">
+                    #fst > div {
+                        text-align: center;
+                        padding: 20px;
 
-                       <!-- <hr style="float:left" class="separator">
+                    }
+
+
+                </style>
+                
+                <!-- <div class="sub_title">
+                    <hr class="separator">
+                    <h3>TITRE QUI S'ECRIT</h3>
+                </div> -->
+                
+                       <!-- 
                        <span>aeazza</span>
-                        <div class="row align-items-center">
-                            <div class="col">col</div>
-                            <div class="col">col</div>
-                            <div class="col">col</div>
+                        
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <div id="map"></div>            </div>
  -->
-				</div>
-				
-			</main>
-        </div>
-            <div id="fst" class="page">
-</div>
+
+            </div>
 <style type="text/css">
+    .sub_title * {
+    float: right;
+}
+
+.sub_title h1 {}
+
+.sub_title hr {
+    margin-right: 2%;
+    margin-left: 5px;
+}
+
     .page {
-        height: 100vh;
+        min-height: 100vh;
     }
-    #fst {
-        background-color: #351613;
-        background-color: #553734;
-        /*background: radial-gradient(circle at top, rgba(194, 63, 84, 0), rgba(224, 125, 195, 1));
-    /*#c9a5cc
-        background-color: black;*/
-        background-color: #f5f5f5;
-        margin: 0 5% 5% 5%;
+
+    .page:not(:first-child), .register {
+        margin: 0 3% 50px 2%;
+    }
+
+    .page:nth-child(2) {
+/*        background: radial-gradient(circle at top, transparent, rgba(220, 125, 195, 1));
+*/      background-color: #f5f5f5;        
+    }
+
+    .page:nth-child(3) {
+        background-color: red;
     }
 </style>
 			
@@ -283,7 +310,7 @@
             </div>
         </div>
                         
-        
+        <div class="page" style="background-color: red"></div>
        <br><br><br><br><br><br><br><br><br><br>
                         <!-- carte ici -->	
         
