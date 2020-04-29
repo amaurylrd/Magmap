@@ -1,4 +1,7 @@
 <?php
 	
-	var_dump($_SESSION['login']);
+	if (isset($_SESSION['user_email']))
+		var_dump($_SESSION['user_email']);
+	else
+		var_dump($_SESSION);
 ?>

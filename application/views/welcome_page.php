@@ -20,8 +20,14 @@
   	</head>
 
     <?php
-        function input_tag($type, $name, $placeholder = "") {
-            return '<input type="'.$type.'" name="'.$name.'" class="form-control" value="'.set_value($name).'" placeholder="'.$placeholder.'">';
+        function input_tag($type, $name, $placeholder = "", $focus = FALSE) {
+            $attributes = 'type="'.$type.'"';
+            $attributes .= ' name="'.$name.'"';
+            $attributes .= ' class="form-control"';
+            $attributes .= ' value="'.set_value($name).'"';
+            $attributes .= ' placeholder="'.$placeholder.'"';
+            $head = '<input '; $tail = '>';
+            return !$focus ? $head.$attributes.$tail : $head.$attributes.' autofocus'.$tail;
         }
     ?>
 
@@ -235,7 +241,7 @@
                                 <?= form_open('welcome/register', array('class' => 'row')) ?>
                                     <div class="col-md-6 form-group">
                                         <div class="form-group">
-                                            <?= input_tag('email', 'rg_email', 'Adresse e-mail') ?>
+                                            <?= input_tag('email', 'rg_email', 'Adresse e-mail', $focus) ?>
                                         </div>
                                         <div class="input-group mb-2">
                                             <div class="input-group-prepend">

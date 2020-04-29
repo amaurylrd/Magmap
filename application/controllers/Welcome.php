@@ -5,6 +5,8 @@ class Welcome extends CI_Controller {
 	function __construct() {
         parent::__construct();
         $this->load->library('form_validation');
+        $this->load->library('session');
+        $this->load->model('User');
 	}
 	
 	public function index() {
@@ -18,7 +20,6 @@ class Welcome extends CI_Controller {
         }
         //load model
         //model récup les données 
-                    
 
         $cookie_name = 'depts_cookie';
         if (!isset($_COOKIE[$cookie_name])) {
@@ -27,25 +28,49 @@ class Welcome extends CI_Controller {
             setcookie($cookie_name, $cookie_data, $cookie_expires);
         }
 
-        if (isset($_SESSION['login']))
-			$this->load->view('welcome_page');
+        if (!isset($_SESSION['user_email']))
+			$this->layout();
 		else {
 			$data = [];
 			$this->load->view('user_page', $data);
 		}
 	}
 
+	public function layout($focus = FALSE) {
+		$data['focus'] = $focus;
+		$this->load->view('welcome_page', $data);
+	}
+
 	public function login() {
+		$this->form_validation->set_rules('lg_email', 'adresse e-mail', 'required|valid_email');
+		$this->form_validation->set_rules('lg_password', 'mot de passe', 'required');
+		$user = ['email' => $this->input->post('lg_email'), 'password' => $this->input->post('lg_password')];
+		if ($this->form_validation->run() == FALSE)
+			$this->layout();
+		else if (!$this->User->exist($user))
+			var_dump('erreur user exist');
+		else {
+			$this->session->set_userdata('user_email', $user['email']);
+			var_dump('session');
+		}
+
+
+
+
 		$this->load->model('Mapping');
-		$x = $this->Mapping->distance(48.86417880, 2.34250440, 43.6008177, 3.8873392);
-		$coordinates = $this->Mapping->search('77'.'000');
-		
+		$km = $this->Mapping->distance(48.86417880, 2.34250440, 43.6008177, 3.8873392);
+		$coordinates = $this->Mapping->search('77'.'000');		
 		$lng = $coordinates[0]; $lat = $coordinates[1];
 		$dept = $this->Mapping->reverse($lng, $lat);
-		var_dump($dept);
 	}
 
 	public function register() {
+		$this->form_validation->set_rules('rg_email', 'adresse e-mail', 
+			array('required', 'valid_email', array('user_mail_callback', array($this->User, 'valid_email'))));
+		$this->form_validation->set_rules('rg_username', 'nom d\'utilisateur', 'required');
+		$this->form_validation->set_rules('rg_password', 'mot de passe', 'required');
+		$this->form_validation->set_rules('rg_passconf', 'confirmation du mot de passe', 'required|matches[password]');
+			//birthdate > à 18 ans
 		var_dump('register');
 	}
 }
