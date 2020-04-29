@@ -47,12 +47,22 @@ class Welcome extends CI_Controller {
 	}
 
 	public function login() {
-		var_dump('login');
+		$this->load->model('Mapping');
+		$x = $this->Mapping->distance(48.86417880, 2.34250440, 43.6008177, 3.8873392);
+		$coordinates = $this->Mapping->search('Paris');
+		
+		$lng = $coordinates[0]; $lat = $coordinates[1];
+		$postcode = $this->Mapping->reverse($lng, $lat)['features'][0]['properties']['postcode'];
+		$dept = substr($postcode, 0, 2);
+		var_dump($dept);
+		//var_dump($this->Mapping->reverse(48.86417880,2.34250440));
 	}
 
 	public function register() {
 		var_dump('register');
 	}
+
+
 
 
 	//https://dwarves.iut-fbleau.fr/git/abreudia/e-Mento/src/master/e-Mento/application/controllers/Welcome.php
