@@ -40,7 +40,7 @@
                                         <i class="fa fa-at" aria-hidden="true"></i>
                                     </div>
                                 </div>
-                                <?= input_tag('email', 'lg_email', 'Nom d\'utilisateur') ?>
+                                <?= input_tag('email', 'lg_email', 'Adresse e-mail') ?>
                             </div>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
