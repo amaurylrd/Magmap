@@ -26,14 +26,42 @@
 
   	<body>   
 		<div id="app">
-            <div class="page">
+            <div class="page" id="connection">
                 <header>
 				    <nav class="nav nav-bar">
-					   <a style="margin-right: auto" href="">
-						  <img class="nav-logo" src="<?= base_url('assets/images/raspberry.svg'); ?>">
-					   </a>
-                        <?= anchor('#registration', 'S’inscrire', 'class="nav-link"'); ?>
-                        <?= anchor('', 'Se connecter', 'class="nav-link"'); ?>
+                        <a style="margin-right: auto" href="">
+                            <img class="nav-logo" src="<?= base_url('assets/images/raspberry.svg'); ?>">
+                        </a>
+                        <?= form_open('', array('class' => 'form-inline')) ?>                     
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-at" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <?= input_tag('email', 'lg_email', 'Nom d\'utilisateur') ?>
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text" onclick="toggle('lg_password')">
+                                        <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <?= input_tag('password', 'lg_password', 'Mot de passe') ?>
+                            </div>
+                            <button type="submit" class="nav-link"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                        <?= form_close() ?>
+                        <div>
+                            <?= anchor('#registration', 'S’inscrire', 'class="nav-link"'); ?>
+                            <?= anchor('', 'Se connecter', ['class' => 'nav-link', 'onclick' => 'return develop(this)']); ?>   
+                        </div>
+                        <script type="text/javascript">
+                            function develop(anchor) {
+                                anchor.parentNode.style.display = "none";
+                                document.getElementsByClassName('form-inline')[0].style.visibility = "visible";
+                                return false;
+                            }
+                        </script>
 				    </nav>
                 </header>
 
@@ -44,70 +72,32 @@
 				    </div>
                 </main>
             </div>
-            <div class="page">
-                <div class="row align-items-center">
-                    <div class="col">
-                        <img src="" alt="rtr">
-                        <span>truc</span>
-                    </div>
-                    <div class="col">col</div>
-                    <div class="col">col</div>
+            <div class="row t .fluid">
+                <div class="col-sm-5">
+                    <!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p> -->
                 </div>
-                <style type="text/css">
-                    #fst > div {
-                        text-align: center;
-                        padding: 20px;
-
-                    }
-
-
-                </style>
-                
-                <!-- <div class="sub_title">
-                    <hr class="separator">
-                    <h3>TITRE QUI S'ECRIT</h3>
-                </div> -->
-                
-                       <!-- 
-                       <span>aeazza</span>
-                        
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    <div id="map"></div>            </div>
- -->
-
+               <div class="col" id="map"></div> 
             </div>
-<style type="text/css">
-    .sub_title * {
-    float: right;
-}
 
-.sub_title h1 {}
+            <style type="text/css">
+                .t {
+                    margin-bottom: 80px;
+                }
 
-.sub_title hr {
-    margin-right: 2%;
-    margin-left: 5px;
-}
-
-    .page {
-        min-height: 100vh;
-    }
-
-    .page:not(:first-child), .register {
-        margin: 0 3% 50px 2%;
-    }
-
-    .page:nth-child(2) {
-/*        background: radial-gradient(circle at top, transparent, rgba(220, 125, 195, 1));
-*/      background-color: #f5f5f5;        
-    }
-
-    .page:nth-child(3) {
-        background-color: red;
-    }
-</style>
-			
+                .t > .col-sm-5 {
+                    background-color: red;
+                    height: auto;
+                    margin-left: 10%;
+width: 40%;
+                }
+            </style>
+            
+           
 
 			<div class="register">
+                <svg id="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#fff" fill-opacity="1" d="M0,288L60,256C120,224,240,160,360,138.7C480,117,600,139,720,160C840,181,960,203,1080,202.7C1200,203,1320,181,1380,170.7L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+                </svg>
 				<div class="container" style="height: 650px">
 					<div class="tweet-container">
                 		<div class="tweet">
@@ -244,7 +234,7 @@
                     <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="">
                     <h3>Bienvenue</h3>
                     <span>Vous faites d&eacute;j&agrave; partie de nos membres ? Connectez-vous pour d&eacute;couvrir notre s&eacute;lection de profils par affinit&eacute;s.</span>
-                    <a class="nav-link" href="">Se connecter</a>
+                    <?= anchor('#connection', 'Se connecter', 'class="nav-link"'); ?>
                 </div>
                 <div id="registration" class="col-md-9 register-right">
                     <div class="tab-content">
@@ -253,36 +243,36 @@
                             <?= form_open('', array('class' => 'row')) ?>
                                 <div class="col-md-6 form-group">
                                     <div class="form-group">
-                                        <?= input_tag('email', 'email', 'Adresse e-mail') ?>
+                                        <?= input_tag('email', 'rg_email', 'Adresse e-mail') ?>
                                     </div>
                                     <div class="input-group mb-2">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text" onclick="toggle('password')">
+                                            <div class="input-group-text" onclick="toggle('rg_password')">
                                                 <i class="fa fa-eye-slash" aria-hidden="true"></i>
                                             </div>
                                         </div>
-                                        <?= input_tag('password', 'password', 'Mot de passe') ?>
+                                        <?= input_tag('password', 'rg_password', 'Mot de passe') ?>
                                     </div>
                                     <div class="form-group">
-                                        <select name="dept" class="form-control" id="depts"></select>
+                                        <select name="rg_dept" class="form-control" id="depts"></select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <?= input_tag('text', 'username', 'Nom d\'utilisateur') ?>
+                                        <?= input_tag('text', 'rg_username', 'Nom d\'utilisateur') ?>
                                     </div>
                                     <div class="input-group mb-2">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text" onclick="toggle('passconf')">
+                                            <div class="input-group-text" onclick="toggle('rg_passconf')">
                                                 <i class="fa fa-eye-slash" aria-hidden="true"></i>
                                             </div>
                                         </div>
-                                        <?= input_tag('password', 'passconf', 'Confirmation du mot de passe') ?>
+                                        <?= input_tag('password', 'rg_passconf', 'Confirmation du mot de passe') ?>
                                     </div>
                                     <div class="form-group">
-                                        <?= input_tag('date', 'birthdate') ?>
+                                        <?= input_tag('date', 'rg_birthdate') ?>
                                     </div>
-                                    <input type="submit" class="btnRegister" value="S'enregistrer"/>
+                                    <input type="submit" class="btnRegister" value="S'enregistrer">
                                 </div>
                             <?= form_close() ?>
 
@@ -310,7 +300,7 @@
             </div>
         </div>
                         
-        <div class="page" style="background-color: red"></div>
+        <div class="page"></div>
        <br><br><br><br><br><br><br><br><br><br>
                         <!-- carte ici -->	
         
