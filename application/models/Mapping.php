@@ -16,8 +16,7 @@ class Mapping extends CI_Model {
 
     public static function reverse($lng, $lat) {
         $api = 'https://api-adresse.data.gouv.fr/reverse/?lon='.$lng.'&lat='.$lat;
-        $json = json_decode(file_get_contents($api), true);
-        return $json;
+        return substr(json_decode(file_get_contents($api), true)['features'][0]['properties']['postcode'], 0, 2);
     }
 
     public static function search($query) {

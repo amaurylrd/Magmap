@@ -28,3 +28,5 @@ window.onload = () => {
         map_initialize(rep);
 	}, (err) => {});
 }
+
+//INSERT INTO USER VALUES(email, hash, dept);

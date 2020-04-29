@@ -27,8 +27,30 @@ class Welcome extends CI_Controller {
             setcookie($cookie_name, $cookie_data, $cookie_expires);
         }
 
+        if (isset($_SESSION['login']))
+			$this->load->view('welcome_page');
+		else {
+			$data = [];
+			$this->load->view('user_page', $data);
+		}
+	}
 
-                    // $from    = 'no-reply@magmap.com';
+	public function login() {
+		$this->load->model('Mapping');
+		$x = $this->Mapping->distance(48.86417880, 2.34250440, 43.6008177, 3.8873392);
+		$coordinates = $this->Mapping->search('77'.'000');
+		
+		$lng = $coordinates[0]; $lat = $coordinates[1];
+		$dept = $this->Mapping->reverse($lng, $lat);
+		var_dump($dept);
+	}
+
+	public function register() {
+		var_dump('register');
+	}
+}
+
+  // $from    = 'no-reply@magmap.com';
                     // $to      = 'amaurylrd@yahoo.fr';
                     // $subject = 'le sujet';
                     // $message = 'Bonjour !';
@@ -40,24 +62,3 @@ class Welcome extends CI_Controller {
                     // if (!$success) {
                     //     $errorMessage = error_get_last()['message'];
                     // }
-
-                 
-		$this->load->view('home_page');
-		//$this->layout(isset($_SESSION['login']));
-	}
-
-	public function login() {
-		$this->load->model('Mapping');
-		$x = $this->Mapping->distance(48.86417880, 2.34250440, 43.6008177, 3.8873392);
-		$coordinates = $this->Mapping->search('Paris');
-		
-		$lng = $coordinates[0]; $lat = $coordinates[1];
-		$postcode = $this->Mapping->reverse($lng, $lat)['features'][0]['properties']['postcode'];
-		$dept = substr($postcode, 0, 2);
-		var_dump($dept);
-	}
-
-	public function register() {
-		var_dump('register');
-	}
-}
