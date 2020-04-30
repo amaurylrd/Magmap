@@ -35,7 +35,7 @@ class Welcome extends CI_Controller {
 		}
 	}
 
-	public function layout($focus = FALSE) {
+	public function layout($focus = '') {
 		$data['focus'] = $focus;
 		$this->load->view('welcome_page', $data);
 	}
@@ -64,7 +64,7 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_message('valid_email', 'Cette adresse e-mail est déjà utilisée.');
 		$this->form_validation->set_message('valid_date', 'Vous devez être majeur(e) pour utiliser ce site.');
 		if ($this->form_validation->run() == FALSE) {
-			$this->layout(TRUE);
+			$this->layout('autofocus');
 		}
 		else {
 			$this->load->model('Mapping');
@@ -81,6 +81,7 @@ class Welcome extends CI_Controller {
 				var_dump('insert fails');//$this->layout(TRUE);
 			else {
 				$this->session->set_userdata('user_email', $user['email']);
+				var_dump($location);
 				var_dump('insert done, session open');
 			}
 		}
@@ -91,8 +92,6 @@ class Welcome extends CI_Controller {
     	$regex = DateTime::createFromFormat($format, $date);
     	if ($regex !== false && !array_sum($regex->getLastErrors()))
     		$date = date("Y-m-d", strtotime($date));
-
-    	var_dump(18 <= date_diff(date_create('now'), date_create($date))->y);
     	return 18 <= date_diff(date_create('now'), date_create($date))->y;
 	}
 }

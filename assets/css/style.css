@@ -361,6 +361,16 @@ svg#wave {
     color: #495057;
 }
 
+.error {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    position: absolute;
+    padding: 6px 10px 7px;
+    top: 70%;
+    right: -25px;
+    color: #f8c1cf;
+}
+
 /* tout est bon au dessus */
 
 footer {

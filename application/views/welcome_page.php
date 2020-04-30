@@ -265,15 +265,15 @@
                                                     <i class="fa fa-eye-slash" aria-hidden="true"></i>
                                                 </div>
                                             </div>
-                                            <?= input_tag('password', 'rg_passconf', 'Confirmation du mot de passe', $focus) ?>
+                                            <?= input_tag('password', 'rg_passconf', 'Confirmation du mot de passe') ?>
                                         </div>
                                         <div class="form-group">
                                             <?= input_tag('date', 'rg_birthdate') ?>
                                         </div>
-                                        <input type="submit" class="btnRegister" value="S'enregistrer">
+                                        <input type="submit" class="btnRegister" value="S'enregistrer" <?= $focus ?>>
                                     </div>
                                 <?= form_close() ?>
-                                <?= validation_errors('<div class="alert">', '</div>'); ?>
+                                <?= validation_errors('<div class="alert form_error">', '</div>'); ?>
                             </div>
                         </div>
                     </div>
