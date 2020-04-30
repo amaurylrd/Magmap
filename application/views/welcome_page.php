@@ -26,7 +26,7 @@
             $attributes .= ' class="form-control"';
             $attributes .= ' value="'.set_value($name).'"';
             $attributes .= ' placeholder="'.$placeholder.'"';
-            $head = '<input '; $tail = '>';
+            $head = '<input required '; $tail = '>';
             return !$focus ? $head.$attributes.$tail : $head.$attributes.' autofocus'.$tail;
         }
     ?>
@@ -241,7 +241,7 @@
                                 <?= form_open('welcome/register', array('class' => 'row')) ?>
                                     <div class="col-md-6 form-group">
                                         <div class="form-group">
-                                            <?= input_tag('email', 'rg_email', 'Adresse e-mail', $focus) ?>
+                                            <?= input_tag('email', 'rg_email', 'Adresse e-mail') ?>
                                         </div>
                                         <div class="input-group mb-2">
                                             <div class="input-group-prepend">
@@ -265,7 +265,7 @@
                                                     <i class="fa fa-eye-slash" aria-hidden="true"></i>
                                                 </div>
                                             </div>
-                                            <?= input_tag('password', 'rg_passconf', 'Confirmation du mot de passe') ?>
+                                            <?= input_tag('password', 'rg_passconf', 'Confirmation du mot de passe', $focus) ?>
                                         </div>
                                         <div class="form-group">
                                             <?= input_tag('date', 'rg_birthdate') ?>
@@ -273,6 +273,7 @@
                                         <input type="submit" class="btnRegister" value="S'enregistrer">
                                     </div>
                                 <?= form_close() ?>
+                                <?= validation_errors('<div class="alert">', '</div>'); ?>
                             </div>
                         </div>
                     </div>

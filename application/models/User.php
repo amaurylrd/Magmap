@@ -33,5 +33,20 @@ class User extends CI_Model {
             ->get();
         return count($query->result()) < 1;
     }
+
+    public function insert($user) {
+        $user['password'] = $this->hash($user['password']);
+        return $this->db->insert('USER', $user);
+    }
+
+    public function delete($user_email) {
+        $this->db->delete('USER', array('email' => $user_email));
+    }
+
+    public function edit($user_email, $update) {
+        $this->db->set($update)
+            ->where('user_email', $user_email)
+            ->update('USER');
+    }
 }
 ?>
