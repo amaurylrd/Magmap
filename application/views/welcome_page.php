@@ -273,7 +273,9 @@
                                         <input type="submit" class="btnRegister" value="S'enregistrer" <?= $focus ?>>
                                     </div>
                                 <?= form_close() ?>
-                                <?= validation_errors('<div class="alert form_error">', '</div>'); ?>
+                                <div id="form_error">
+                                    <?= validation_errors('<div class="alert error">', '</div>'); ?>    
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -329,6 +329,22 @@ svg#wave {
     opacity: 1;
 }
 
+#form_error {
+    background-color: transparent;
+    height: 100px;
+    width: 58%;
+    margin-left: 90px;
+    position: absolute;
+    margin-top: -160px;
+}
+
+.error {
+    line-height: 1.4rem;
+    padding: 0 0 3px;
+    color: #da7eb2;;
+    margin-bottom: 0;
+}
+
 .btnRegister {
     float: right;
     margin-top: 10%;
@@ -359,16 +375,6 @@ svg#wave {
     margin-bottom: -15%;
     padding-bottom: 5px;
     color: #495057;
-}
-
-.error {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-    position: absolute;
-    padding: 6px 10px 7px;
-    top: 70%;
-    right: -25px;
-    color: #f8c1cf;
 }
 
 /* tout est bon au dessus */
