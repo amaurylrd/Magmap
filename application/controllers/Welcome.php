@@ -41,13 +41,10 @@ class Welcome extends CI_Controller {
 	}
 
 	public function login() {
-		$this->form_validation->set_rules('lg_email', 'adresse e-mail', 'valid_email');
-		//message valid email
+		//if POST vide redirect 404
 		$user = ['email' => $this->input->post('lg_email'), 'password' => $this->input->post('lg_password')];
-		if ($this->form_validation->run() == FALSE)
-			$this->layout();
-		else if (!$this->User->exist($user))
-			var_dump('erreur user exist');
+		if (!$this->User->exists($user))
+			$this->layout('autofocus');
 		else {
 			$this->session->set_userdata('user_email', $user['email']);
 			var_dump('session access done');
@@ -55,6 +52,7 @@ class Welcome extends CI_Controller {
 	}
 
 	public function register() {
+		//if POST vide redirect 404
 		$this->form_validation->set_rules('rg_email', 'rg_email', 
 			array('required', 'valid_email', array('valid_email', array($this->User, 'valid_email'))));
 		$this->form_validation->set_rules('rg_password', 'rg_password', 'trim');
@@ -78,10 +76,9 @@ class Welcome extends CI_Controller {
 				'creation' => date_create('now', timezone_open('Europe/Paris'))->format('Y-m-d')
 			];
 			if (!$this->User->insert($user))
-				var_dump('insert fails');//$this->layout(TRUE);
+				var_dump('insert fails');//redirect 404
 			else {
 				$this->session->set_userdata('user_email', $user['email']);
-				var_dump($location);
 				var_dump('insert done, session open');
 			}
 		}
