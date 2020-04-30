@@ -42,6 +42,7 @@ class Welcome extends CI_Controller {
 
 	public function login() {
 		//if POST vide redirect 404
+		//if (empty($_POST[]))
 		$user = ['email' => $this->input->post('lg_email'), 'password' => $this->input->post('lg_password')];
 		if (!$this->User->exists($user))
 			$this->layout('autofocus');
@@ -76,7 +77,7 @@ class Welcome extends CI_Controller {
 				'creation' => date_create('now', timezone_open('Europe/Paris'))->format('Y-m-d')
 			];
 			if (!$this->User->insert($user))
-				var_dump('insert fails');//redirect 404
+				$this->load->view('404_page');
 			else {
 				$this->session->set_userdata('user_email', $user['email']);
 				var_dump('insert done, session open');
